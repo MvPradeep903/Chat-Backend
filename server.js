@@ -18,7 +18,7 @@ const server = http.createServer(app);
 const mongo_url = process.env.MONGO_URL;
 const allowedOrigin = process.env.FRONTEND_URL || 'http://localhost:3000';
 
-app.use(cors({ origin: allowedOrigin }));
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
